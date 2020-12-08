@@ -1,0 +1,85 @@
+.layoyt-wraper {
+  margin-left: 260px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  height: 100vh;
+}
+
+.menu-wrapper {
+  background-color: #ffcb62;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  left: 60px;
+}
+
+.menu {
+  height: 100%;
+  position: fixed;
+}
+
+.main-menu-list {
+  display: inline;
+}
+
+.main-menu-list li {
+  display: block;
+  list-style-type: none;
+  background-color: rgba(255, 188, 55, 0.5);
+  margin: 10px auto;
+}
+
+.main-menu-list li:hover {
+  background-color: rgba(255, 188, 55, 0.9);
+  transition: background 0.2s;
+}
+
+.main-menu-list li.active {
+  background-color: rgba(255, 188, 55, 0.8);
+}
+
+.main-menu-list li a {
+  color: whitesmoke;
+  font-size: 16px;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  font-weight: bold;
+  display: block;
+  border-left: 8px solid rgb(255, 197, 76);
+  text-decoration: none;
+}
+
+.main-menu-list li:hover a {
+  border-left: 8px solid #ffaa00;
+}
+
+.main-menu-list li.active a {
+  font-weight: bold;
+  border-left: 8px solid whitesmoke;
+}
+
+.profile-menu {
+  width: 60px;
+  left: 0;
+  position: fixed;
+  height: 100%;
+  background-color: #ffaa00;
+}
+
+.user-profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: whitesmoke;
+  position: absolute;
+  bottom: 30px;
+  left: 10px;
+}
+
+.menu-wrapper {
+  background-color: #ffcb62;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  left: 60px;
+}
