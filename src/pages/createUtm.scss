@@ -1,0 +1,32 @@
+.form-wrapper {
+  background-color: white;
+  padding: 30px;
+
+  & .form-group {
+    margin-bottom: 15px;
+  }
+
+  & label {
+    font-size: 18px;
+    font-family: "Cuprum", sans-serif;
+    margin-bottom: 0px;
+  }
+
+  & .form-control {
+    border: 0px solid transparent;
+    border-radius: 0;
+    border-left: 5px solid #005b5b;
+    border-bottom: 1px dashed #005b5b;
+  }
+
+  & .form-control:focus,
+  & .form-control:active {
+    box-shadow: 0 0 black;
+    background-color: #fffcfc;
+    transition: 0.2s;
+  }
+}
+
+.utm-result-wrapper {
+  margin: 50px 0;
+}
