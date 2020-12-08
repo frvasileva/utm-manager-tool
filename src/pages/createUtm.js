@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Layout from "../components/Layout/Layout";
 import "./createUtm.scss";
+import { isValidHttpUrl } from "./../helpers/regexValidation";
 
 const CreateUtm = () => {
   const [fields, setFields] = useState({
@@ -21,18 +22,29 @@ const CreateUtm = () => {
     });
   };
 
+  const formValidation = () => {
+    let formIsValid = false;
+    formIsValid = isValidHttpUrl(fields.url);
+    return formIsValid;
+  };
+
   const submitForm = (event) => {
-
     event.preventDefault();
-    
-    utmUrl =  fields.url + "?" 
-      + (fields.sourceName !== "" ? "utm_source=" + fields.sourceName : "") 
-      + (fields.mediumName !== "" ? "&utm_medium=" + fields.mediumName : "")
-      + (fields.campaignName !== "" ? "&utm_campaign=" + fields.campaignName : "")
-      + (fields.term !== "" ? "&utm_term=" + fields.term : "")
-      + (fields.content !== "" ? "&utm_content=" + fields.content : "")
 
-    setUtmUrl(utmUrl);
+    if (formValidation()) {
+      utmUrl =
+        fields.url +
+        "?" +
+        (fields.sourceName !== "" ? "utm_source=" + fields.sourceName : "") +
+        (fields.mediumName !== "" ? "&utm_medium=" + fields.mediumName : "") +
+        (fields.campaignName !== ""
+          ? "&utm_campaign=" + fields.campaignName
+          : "") +
+        (fields.term !== "" ? "&utm_term=" + fields.term : "") +
+        (fields.content !== "" ? "&utm_content=" + fields.content : "");
+
+      setUtmUrl(utmUrl);
+    } else console.error("Form is invalid");
   };
 
   return (
@@ -52,6 +64,7 @@ const CreateUtm = () => {
                 placeholder="Enter url"
                 onChange={handleInputChange}
                 valuue={fields.url}
+                required
               />
               <small id="urlHelp" className="form-text text-muted">
                 The full website URL (e.g. https://www.example.com)
@@ -67,6 +80,7 @@ const CreateUtm = () => {
                 onChange={handleInputChange}
                 valuue={fields.campaignName}
                 placeholder="Enter campaign name"
+                required
               />
               <small id="urlHelp" className="form-text text-muted">
                 The referrer: (e.g. google, newsletter)
@@ -82,6 +96,7 @@ const CreateUtm = () => {
                 onChange={handleInputChange}
                 valuue={fields.sourceName}
                 placeholder="Enter source name"
+                required
               />
               <small id="urlHelp" className="form-text text-muted">
                 The referrer: (e.g. google, newsletter)
@@ -97,6 +112,7 @@ const CreateUtm = () => {
                 onChange={handleInputChange}
                 valuue={fields.mediumName}
                 placeholder="Enter medium name"
+                required
               />
               <small id="urlHelp" className="form-text text-muted">
                 Marketing medium: (e.g. cpc, banner, email)
@@ -131,6 +147,16 @@ const CreateUtm = () => {
               <small id="urlHelp" className="form-text text-muted">
                 Use to differentiate ads
               </small>
+            </div>
+            <div className="form-check">
+              <input
+                type="checkbox"
+                className="form-check-input"
+                id="createShortendedUrl"
+              />
+              <label className="form-check-label" htmlFor="createShortendedUrl">
+                Create a shortened URL
+              </label>
             </div>
 
             <button type="submit" className="btn btn-dark btn-lg">

@@ -8,7 +8,7 @@ const UtmList = () => {
       campaignName: "campaign",
       content: "content",
       mediumName: "medium",
-      sourceName: "source",
+      sourceName: "banner",
       term: "term",
       url: "https://www.ft123.com/",
     },
@@ -16,7 +16,7 @@ const UtmList = () => {
       campaignName: "campaign",
       content: "content",
       mediumName: "medium",
-      sourceName: "source",
+      sourceName: "cpp",
       term: "term",
       url: "https://www.ft456.com/",
     },
@@ -27,6 +27,14 @@ const UtmList = () => {
       sourceName: "source",
       term: "term",
       url: "https://www.ft789.com/",
+    },
+    {
+      campaignName: "campaign",
+      content: "banner",
+      mediumName: "medium",
+      sourceName: "pcp",
+      term: "image",
+      url: "https://www.abv.com/",
     },
   ];
 

@@ -20,10 +20,10 @@ const Menu = () => {
                 <Link to="/createUtm">Create UTM</Link>
               </li>
               <li className="nav-item">
-                <Link to="/create-facebook-group">Create Fb Group</Link>
+                <Link to="/utmList">UTM List</Link>
               </li>
               <li className="nav-item">
-                <Link to="/utms">Utms</Link>
+                <Link to="/PreferredUtmMakerURL">Preffered UTM Url</Link>
               </li>
             </ul>
           </div>
