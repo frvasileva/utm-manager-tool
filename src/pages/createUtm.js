@@ -22,7 +22,7 @@ const CreateUtm = () => {
   };
 
   const submitForm = (event) => {
-    
+
     event.preventDefault();
     
     utmUrl =  fields.url + "?" 
